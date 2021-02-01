@@ -1,10 +1,8 @@
-import React from 'react';
-import { Form, Group, Label, Control } from 'react-bootstrap';
-
+import React, { useEffect } from 'react';
+import Api from '../../Api';
 
 //components
 import UserInterest from '../user-interest/UserInterest';
-
 
 //pictures
 import avatar from '../../assets/avatar.jpg';
@@ -16,17 +14,37 @@ import ellie from '../../assets/the_last_of_us_II.jpg'
 import breakpoint from '../../assets/breakpoint.png'
 import kratos from '../../assets/god_of_war.png'
 
+//styles imports
 import './index.css';
 
 
 const Index = () => {
 
     const [isFind, setIsFind] = React.useState(false)
+    const [interest, setInterest] = React.useState([]);
+
+
+    useEffect(() => {
+        getInterest();
+    }, [])
+
+
+    const getInterest = async () => {
+
+        Api.get('/get-interest').then((resp) => {
+            setInterest(resp.data);
+            console.log(interest)
+        }).catch(error => console.error(error))
+
+    }
+
+    const getUserInterest = () => {
+        
+    }
 
     const findUserSameInterest = () => {
         setIsFind(true)
     }
-
 
 
     return (
@@ -65,10 +83,14 @@ const Index = () => {
                             <div id="search-bar">
                                 <h1>Procurar gamers</h1>
                                 <select className="select">
-                                    <option>Choose your option</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
+                                    <option selected disabled>Selecione um jogo para encontrar amigos</option>
+                                    {
+                                        interest.map(option => (
+                                            <option key={option.id}>
+                                                {option.interest}
+                                            </option>
+                                        ))
+                                    }
                                 </select>
                             </div>
                         </>
