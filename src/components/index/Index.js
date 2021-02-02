@@ -58,20 +58,20 @@ const Index = () => {
                             <h3>Helena Martins</h3>
                             <p>Membro Pro</p>
                         </div>
-                        <div className='Links'>
-                            <div className='Link'>
+                        <div className='links'>
+                            <div className='link'>
                                 <img src={twitch}></img>
-                                <h2>Streams</h2>
+                                <h2>Time line</h2>
                             </div>
-                            <div className='Link'>
+                            <div className='link'>
                                 <img src={steam}></img>
                                 <h2>Jogos</h2>
                             </div>
-                            <div className='Link'>
+                            <div className='link'>
                                 <img src={upcoming}></img>
-                                <h2>Novo</h2>
+                                <h2>Novos</h2>
                             </div>
-                            <div className='Link'>
+                            <div className='link'>
                                 <img src={library}></img>
                                 <h2>Biblioteca</h2>
                             </div>

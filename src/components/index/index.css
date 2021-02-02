@@ -63,6 +63,12 @@ main {
     align-items: center;
 }
 
+.link:hover{
+    cursor: pointer;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+
+}
+
 .link h2 {
     padding: 0 2rem;
 }
