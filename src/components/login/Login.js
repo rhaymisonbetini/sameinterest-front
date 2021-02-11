@@ -23,7 +23,7 @@ const Login = () => {
                     <span></span>
                     ENTRAR
                 </a><br />
-                <a href='#' classNmae='forgot forgot'>Esqueceu sua Senha?</a>
+                <a href='#' className='forgot'>Esqueceu sua Senha?</a>
             </form>
             <div className='drops'>
                 <div className='drop drop-1'></div>
